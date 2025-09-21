@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /** Singleton Board*/
-class Board {
+public class Board {
     private static Board instance;
     /**Board has-a List<Jump>, where Jump is snake or ladder*/
     private final List<Jump> jumps = new ArrayList<>();
