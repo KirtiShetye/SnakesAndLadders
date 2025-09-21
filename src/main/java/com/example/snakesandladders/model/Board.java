@@ -1,4 +1,4 @@
-package com.example.snakesandladders.snakesandladders.model;
+package com.example.snakesandladders.model;
 
 import java.util.ArrayList;
 import java.util.List;

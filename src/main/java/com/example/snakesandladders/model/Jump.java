@@ -1,4 +1,4 @@
-package com.example.snakesandladders.snakesandladders.model;
+package com.example.snakesandladders.model;
 
 /**Jump can be snake or ladder*/
 public class Jump {
