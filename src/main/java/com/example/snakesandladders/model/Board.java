@@ -15,12 +15,12 @@ public class Board {
         jumps.add(new Jump(3, 22));
         jumps.add(new Jump(8, 30));
         jumps.add(new Jump(28, 84));
-        jumps.add(new Jump(58, 77));
+        jumps.add(new Jump(56, 77));
 
         /** Snakes*/
         jumps.add(new Jump(95, 56));
         jumps.add(new Jump(87, 24));
-        jumps.add(new Jump(62, 19));
+        jumps.add(new Jump(30, 19));
         jumps.add(new Jump(48, 10));
     }
 
@@ -34,29 +34,20 @@ public class Board {
     /**
      * Checks all jumps (snakes or ladders) for the given position and
      * returns position after taking jump.
-     * Handled edge cases such as:
-     *   - The tail of a snake is the start of a ladder
-     *   - The top of a ladder is the head of a snake
-     * The loop runs until no jump is encountered or MAX_ITER limit is reached.
      */
-    public int applyJump(int pos) {
-        int iterations = 0;
-        //MAX_ITER is used to prevent infinite loop if bottom of ladder is tail of snake and
-        //top of ladder is head of snake
-        final int MAX_ITER = 10;
-        while (iterations < MAX_ITER) {
+    public int applyJump(int position) {
+        while (true) {
             boolean jumped = false;
             for (Jump jump : jumps) {
-                if (jump.getStart() == pos) {
-                    pos = jump.getEnd();
+                if (jump.getStart() == position) {
+                    position = jump.getEnd();
                     jumped = true;
                     break; // apply only one jump at a time
                 }
             }
             if (!jumped)
-                break; // no snake or ladder present at pos
-            iterations++;
+                break; // no snake or ladder present at position
         }
-        return pos;
+        return position;
     }
 }

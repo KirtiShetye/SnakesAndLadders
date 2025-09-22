@@ -9,17 +9,17 @@ public class GameService {
         this.board = Board.getInstance();
     }
 
-    public int checkForSnakeOrLadder(int position, int diceCount) {
-        int newPosition=position+diceCount;
+    public int calculateNewPosition(int position, int diceCount) {
+        int newPosition = position+diceCount;
+        //New position range exceeds maximum
         if(newPosition > Board.BOARD_MAX) {
-            System.out.println("New position range exceeds maximum");
             return position;
         }
-        else if(newPosition < Board.BOARD_MAX) {
-            return board.applyJump(newPosition);
-        }
-        else{
+        else if(newPosition == Board.BOARD_MAX){
             return Board.BOARD_MAX;
+        }
+        else {
+            return board.applyJump(newPosition);
         }
     }
 }
