@@ -8,15 +8,18 @@ Setup instructions:
 
 3. Open project in IntelliJ 
     - Start IntelliJ
-    - Open cloned project in IntelliJ and click OK
-    - Dependencies will get imported.
-    - Build project
+    - Open cloned project in IntelliJ
+      File → New → Project from Existing Sources…
+      Select the pom.xml inside cloned folder
+      Import as Maven project → choose Yes
+      Dependencies will get imported.
+    - Menu->Build->Build project
     - Run snakesAndLaddersApp.java
     - Console will open in IntelliJ. Give inputs like 
            87,2
            32,7
+           Pune
            exit
-           start
     - Right click on directory "src/test/java" ,click on Run All Tests.
 
 Assumptions:
@@ -25,8 +28,8 @@ Assumptions:
 3. Console input is comma-separated i.e. position,dice or "exit".
 4. Invalid inputs (non-integer, out-of-range) has retry mechanism.
 5. Position of Snakes and ladders is defined in Board
-Ladders: 3→22, 8→30, 28→84, 56→77
-Snakes: 95→56, 87→24, 30→19, 48→10
+    Ladders: 3→22, 8→30, 28→84, 56→77
+    Snakes: 95→56, 87→24, 30→19, 48→10
 6. Handled condition
    - Tail of snake has start of Ladder 
    - Top of ladder has head of snake
